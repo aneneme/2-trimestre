@@ -1,1 +1,27 @@
+:root {
+    --cor-fundo: rgb(0,0,0);
+    --cor-principal: rgb(45, 164, 203);
+    --cor-secundaria: rgb(230, 219, 61);
+    --cor-destaque: rgb(97, 226, 155);
+    --cor-texto: rgb(32, 192, 53);
+}
 
+body{
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.caixa-principal {
+    background-color: var(--cor-principal);
+    width: 90%;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--cor-destaque);
+}
