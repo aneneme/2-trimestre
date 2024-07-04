@@ -4,72 +4,109 @@ const caixaAlternativas=document.querySelector(".caixa-alternativas");
 const caixaResultado=document.querySelector(".caixa-resultado");
 const textoResultado=document.querySelector(".texto-resultado");
 
-const perguntas=[
+const perguntas = [
     {
-        enunciado: "Pergunta 1",
+        enunciado: "o morango tem que cor?",
         alternativas:[
             {
-           texto: "Alternativa 1",
+           texto: "vermelho",
         afirmação: "afirmação",
             },
-           texto: "Alternativa 2",
+            {
+           texto: "verde",
+           afirmacao: "afirmação"    
+            }
         ]
     },
     {
-        enunciado: "Pergunta 1",
+        enunciado: "no brasil, se fala qual língua?",
         alternativas:[
             {
-           texto: "Alternativa 1",
+           texto: "português",
         afirmação: "afirmação",
             },
-           texto: "Alternativa 2",
+            {
+           texto: "espanhol",
+           afirmacao: "afirmação"    
+            }
         ]
     },
     {
-        enunciado: "Pergunta 1",
+        enunciado: "qual o símbolo do ouro na tabela períodica",
         alternativas:[
             {
-           texto: "Alternativa 1",
+           texto: "Au",
         afirmação: "afirmação",
             },
-           texto: "Alternativa 2",
+            {
+           texto: "K",
+           afirmacao: "afirmação"    
+            }
         ]
     },
     {
-        enunciado: "Pergunta 1",
+        enunciado: "Quantas patas tem um gato?",
         alternativas:[
             {
-           texto: "Alternativa 1",
+           texto: "4",
         afirmação: "afirmação",
             },
-           texto: "Alternativa 2",
+            {
+           texto: "6",
+           afirmacao: "afirmação"    
+            }
         ]
     },
     {
-        enunciado: "Pergunta 1",
+        enunciado: "Qual desses é um metodo contraceptivo?",
         alternativas:[
             {
-           texto: "Alternativa 1",
+           texto: "camisinha",
         afirmação: "afirmação",
             },
-           texto: "Alternativa 2",
+            {
+           texto: "tabelinha",
+            afirmacao: "afirmação"    
+            }
         ]
     },
 ];
 
 let atual=0;
 let perguntasAtual;
+let historiaFinal = ""; 
 
-function mostrarPergunta(){
-    perguntasAtual=perguntas[atual];
-    caixaPergutas.textContent=perguntasAtual.enunciado;
+function mostraPergunta() {
+   if(atual >= perguntas.length){
+        mostraResultado();
+        return;
+    }   
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent = ""; 
     mostraAlternativas();
 }
-
-function moostraAlternativas(){
-    for(const alternativa of perguntasAtual){
-    const botaoAlternativas= document.createElement("button");
-    botaoAlternativas.textContent= alternativa;
-    caixaAlternativas.appendChild(botaoAlternativas);
+function mostraAlternativas() {
+    for(const alternativa of perguntaAtual.alternativas) {
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
+
+function respostaSelecionada(opcaoSelecionada){
+            const afirmacoes = opcaoSelecionada.afirmacoes;  mudar para opcaoSelecionada.afirmacao
+            historiaFinal += afirmacoes + " "; 
+            atual++;
+            mostraPergunta();
+      }
+
+function mostraResultado(){
+    caixaPerguntas.textContent = "Em 2049..."
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent ="";
+}
+
+mostraPergunta();
+
