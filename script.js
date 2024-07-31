@@ -10,11 +10,11 @@ const perguntas = [
         alternativas:[
             {
            texto: "vermelho",
-        afirmação: "afirmação",
+        afirmação: "Sim, o morango é vermelho",
             },
             {
            texto: "verde",
-           afirmacao: "afirmação"    
+           afirmacao: "Parece que vocẽ não sabe a cor de um morango"    
             }
         ]
     },
@@ -23,11 +23,11 @@ const perguntas = [
         alternativas:[
             {
            texto: "português",
-        afirmação: "afirmação",
+        afirmação: "Correto, no brasil se fala português",
             },
             {
            texto: "espanhol",
-           afirmacao: "afirmação"    
+           afirmacao: "Errado"    
             }
         ]
     },
@@ -36,11 +36,11 @@ const perguntas = [
         alternativas:[
             {
            texto: "Au",
-        afirmação: "afirmação",
+        afirmação: "Certo",
             },
             {
            texto: "K",
-           afirmacao: "afirmação"    
+           afirmacao: "Errado, K significa potássio"    
             }
         ]
     },
@@ -49,11 +49,11 @@ const perguntas = [
         alternativas:[
             {
            texto: "4",
-        afirmação: "afirmação",
+        afirmação: "Certo, um gato tem 4 patas",
             },
             {
            texto: "6",
-           afirmacao: "afirmação"    
+           afirmacao: "Parece que você nunca viu um gato",    
             }
         ]
     },
@@ -62,11 +62,11 @@ const perguntas = [
         alternativas:[
             {
            texto: "camisinha",
-        afirmação: "afirmação",
+        afirmação: "Correto",
             },
             {
            texto: "tabelinha",
-            afirmacao: "afirmação"    
+            afirmacao: "Errado, não é um metodo contraceptivo"    
             }
         ]
     },
@@ -103,7 +103,7 @@ function respostaSelecionada(opcaoSelecionada){
       }
 
 function mostraResultado(){
-    caixaPerguntas.textContent = "Em 2049..."
+    caixaPerguntas.textContent = "Parabéns, você tem mais de 130qi.  :]"
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent ="";
 }
